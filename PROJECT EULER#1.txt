@@ -1,0 +1,12 @@
+#!/bin/python3
+
+import sys
+def sum1(n,k):
+    i=n//k
+    return k*(i*(i+1))//2
+def finalSum(n):
+    return sum1(n,3)+sum1(n,5)-sum1(n,15)
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(finalSum(n-1))
