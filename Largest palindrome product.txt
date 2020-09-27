@@ -1,0 +1,41 @@
+#!/bin/python3
+
+import sys
+import math
+def isPalindrome(n):
+    n=str(n)
+    size=len(n)
+    i,j=0,size-1
+    while i<j:
+        if n[i]!=n[j]:
+            break
+        else:
+            i+=1
+            j-=1
+    if i>=j:
+        return True
+    else:
+        return False
+
+def isDiv(n):
+    i=int(math.sqrt(n))
+    while i>=100 and i<=999:
+        if n%i==0:
+            j=n/i
+            if j>=100 and j<=999:
+                return True
+        i-=1
+    return False
+    
+def getMaxpal(n):
+    while n>=10000:        
+        if isPalindrome(n) and isDiv(n):
+            return n
+        else:
+            n-=1
+    return 0
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(getMaxpal(n-1))
