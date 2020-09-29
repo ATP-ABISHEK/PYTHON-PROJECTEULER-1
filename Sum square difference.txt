@@ -1,0 +1,16 @@
+#!/bin/python3
+
+import sys
+def findDiff(n):
+    squaresum=0
+    sumsquare=0
+    for i in range(1,n+1):
+        squaresum=squaresum+(i*i)
+        sumsquare=sumsquare+i
+    sumsquare=sumsquare*sumsquare
+    return sumsquare-squaresum
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(findDiff(n))
